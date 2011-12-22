@@ -1,5 +1,8 @@
 require 'gosu'
 
+# https://github.com/jlnr/gosu/wiki/Ruby-Tutorial
+# https://github.com/jlnr/gosu/wiki/Basic-Concepts
+
 class GameWindow < Gosu::Window
   def initialize
     super 640, 480, false
