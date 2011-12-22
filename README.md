@@ -18,3 +18,10 @@ Nat's foray into Ruby Game Development using [Gosu][]. His goal is to make a sim
 
 [RMagick]: https://github.com/rmagick/rmagick
 [Chipmunk]: https://github.com/slembcke/Chipmunk-Physics
+
+## TODO
+
+ * Automate packaging for Windows: <https://github.com/jlnr/gosu/wiki/Ruby-Packaging-on-Windows>
+ * Automate packaging for OSX: <https://github.com/jlnr/gosu/wiki/Ruby-Packaging-on-OS-X>
+ * Automate packaging for Linux: ???
+
