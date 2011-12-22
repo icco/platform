@@ -9,4 +9,12 @@ Nat's foray into Ruby Game Development using [Gosu][]. His goal is to make a sim
  NOTE: You need universe enabled in Ubuntu for this install to work.
 
  * `sudo aptitude install build-essential freeglut3-dev libfreeimage-dev libgl1-mesa-dev libopenal-dev libpango1.0-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsndfile-dev libxinerama-dev`
- * `gem install gosu`
+ * `gem install gosu chipmunk rmagick`
+
+ NOTE: rmagick may have dependencies I don't know about, probably some ImageMagic libraries or something.
+
+ * [Chipmunk][] is a Physics engine.
+ * [RMagick][] is for dealing with image manipulation.
+
+[RMagick]: https://github.com/rmagick/rmagick
+[Chipmunk]: https://github.com/slembcke/Chipmunk-Physics
