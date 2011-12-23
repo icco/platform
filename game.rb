@@ -27,9 +27,13 @@ class Star
 end
 
 class Player
+  attr_reader :score
+
   def initialize(window)
     @image = Gosu::Image.new(window, "media/Starfighter.bmp", false)
+    @beep = Gosu::Sample.new(window, "media/Beep.wav")
     @x = @y = @vel_x = @vel_y = @angle = 0.0
+    @score = 0
   end
 
   def warp(x, y)
@@ -65,7 +69,13 @@ class Player
 
   def collect_stars(stars)
     stars.reject! do |star|
-      Gosu::distance(@x, @y, star.x, star.y) < 35
+      if Gosu::distance(@x, @y, star.x, star.y) < 35 then
+        @score += 10
+        @beep.play
+        true
+      else
+        false
+      end
     end
   end
 end
@@ -82,6 +92,8 @@ class GameWindow < Gosu::Window
 
     @star_anim = Gosu::Image::load_tiles(self, "media/Star.png", 25, 25, false)
     @stars = Array.new
+
+    @font = Gosu::Font.new(self, Gosu::default_font_name, 20)
   end
 
   def update
@@ -109,6 +121,7 @@ class GameWindow < Gosu::Window
     @background_image.draw(0, 0, ZOrder::Background)
     @player.draw
     @stars.each { |star| star.draw }
+    @font.draw("Score: #{@player.score}", 10, 10, ZOrder::UI, 1.0, 1.0, 0xffffff00)
   end
 
   def button_down(id)
