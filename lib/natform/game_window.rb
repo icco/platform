@@ -3,15 +3,10 @@ class GameWindow < Gosu::Window
     super(800, 600, false)
     self.caption = "Natform (sadnat.com/game)"
 
-    @background_image = Gosu::Image.new(self, "media/Space.png", true)
-
     @player = Player.new(self)
 
     # Sets player at center of screen.
     @player.warp(400, 300)
-
-    @star_anim = Gosu::Image::load_tiles(self, "media/Star.png", 25, 25, false)
-    @stars = Array.new
 
     @font = Gosu::Font.new(self, Gosu::default_font_name, 20)
   end
@@ -30,17 +25,10 @@ class GameWindow < Gosu::Window
     end
 
     @player.move
-    @player.collect_stars(@stars)
-
-    if rand(100) < 4 and @stars.size < 25 then
-      @stars.push(Star.new(@star_anim))
-    end
   end
 
   def draw
-    @background_image.draw(0, 0, ZOrder::Background)
     @player.draw
-    @stars.each { |star| star.draw }
     @font.draw("Score: #{@player.score}", 10, 10, ZOrder::UI, 1.0, 1.0, 0xffffff00)
   end
 
