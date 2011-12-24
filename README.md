@@ -1,4 +1,4 @@
-# platform
+# Natform
 
 Nat's foray into Ruby Game Development using [Gosu][]. His goal is to make a simple platformer where you run, jump and shoot things.
 
