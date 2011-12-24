@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 gem "chipmunk"
+gem "chingu"
 gem "gosu"
 gem "nokogiri"
 gem "rmagick"

@@ -15,9 +15,11 @@ Nat's foray into Ruby Game Development using [Gosu][]. His goal is to make a sim
 
  * [Chipmunk][] is a Physics engine.
  * [RMagick][] is for dealing with image manipulation.
+ * [Chingu][] is a layer ontop of Gosu to make it simpler.
 
 [RMagick]: https://github.com/rmagick/rmagick
 [Chipmunk]: https://github.com/slembcke/Chipmunk-Physics
+[Chingu]: https://github.com/ippa/chingu
 
 ## TODO
 
