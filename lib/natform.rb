@@ -1,9 +1,8 @@
-# https://github.com/jlnr/gosu/wiki/Ruby-Tutorial
-# https://github.com/jlnr/gosu/wiki/Basic-Concepts
 
 require "rubygems"
 require "bundler"
 Bundler.require
+
 
 module ZOrder
   Background, Stars, Player, UI = *0..3
@@ -132,6 +131,3 @@ class GameWindow < Gosu::Window
     end
   end
 end
-
-window = GameWindow.new
-window.show

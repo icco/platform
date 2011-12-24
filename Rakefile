@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/icco/platform"
   gem.license = "MIT"
   gem.summary = %Q{A platform game about Nat.}
-  gem.description = %Q{TODO: longer description.}
+  gem.description = %Q{A platform game where Nat tries to escape depression.}
   gem.email = "nat@natwelch.com"
   gem.authors = ["Nat Welch"]
   # dependencies defined in Gemfile

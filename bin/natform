@@ -1,0 +1,9 @@
+#! /usr/bin/env ruby
+
+# https://github.com/jlnr/gosu/wiki/Ruby-Tutorial
+# https://github.com/jlnr/gosu/wiki/Basic-Concepts
+
+require "lib/natform"
+
+window = GameWindow.new
+window.show

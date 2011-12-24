@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nat Welch"]
   s.date = %q{2011-12-24}
-  s.description = %q{TODO: longer description.}
+  s.description = %q{A platform game where Nat tries to escape depression.}
   s.email = %q{nat@natwelch.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -23,11 +23,11 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
-    "game.rb",
     "media/Beep.wav",
     "media/Space.png",
     "media/Star.png",
-    "media/Starfighter.bmp"
+    "media/Starfighter.bmp",
+    "natform.gemspec"
   ]
   s.homepage = %q{http://github.com/icco/platform}
   s.licenses = ["MIT"]
