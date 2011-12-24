@@ -14,11 +14,11 @@ end
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  gem.name = "sad_nat_game"
-  gem.homepage = "http://github.com/icco/sad_nat_game"
+  gem.name = "natform"
+  gem.homepage = "http://github.com/icco/platform"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A platform game about Nat.}
+  gem.description = %Q{TODO: longer description.}
   gem.email = "nat@natwelch.com"
   gem.authors = ["Nat Welch"]
   # dependencies defined in Gemfile
