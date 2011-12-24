@@ -3,7 +3,7 @@
 # https://github.com/jlnr/gosu/wiki/Ruby-Tutorial
 # https://github.com/jlnr/gosu/wiki/Basic-Concepts
 
-require "lib/natform"
+require "natform"
 
 window = GameWindow.new
 window.show

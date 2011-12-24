@@ -25,3 +25,7 @@ Jeweler::Tasks.new do |gem|
 end
 
 Jeweler::RubygemsDotOrgTasks.new
+
+task :run do
+  sh "ruby -Ilib ./bin/natform"
+end
