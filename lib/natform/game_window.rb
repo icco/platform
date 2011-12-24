@@ -1,12 +1,14 @@
 class GameWindow < Gosu::Window
   def initialize
-    super(640, 480, false)
-    self.caption = "Gosu Tutorial Game"
+    super(800, 600, false)
+    self.caption = "Natform (sadnat.com/game)"
 
     @background_image = Gosu::Image.new(self, "media/Space.png", true)
 
     @player = Player.new(self)
-    @player.warp(320, 240)
+
+    # Sets player at center of screen.
+    @player.warp(400, 300)
 
     @star_anim = Gosu::Image::load_tiles(self, "media/Star.png", 25, 25, false)
     @stars = Array.new
