@@ -1,7 +1,9 @@
 # https://github.com/jlnr/gosu/wiki/Ruby-Tutorial
 # https://github.com/jlnr/gosu/wiki/Basic-Concepts
 
-require 'gosu'
+require "rubygems"
+require "bundler"
+Bundler.require
 
 module ZOrder
   Background, Stars, Player, UI = *0..3
