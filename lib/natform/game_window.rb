@@ -8,9 +8,10 @@ class GameWindow < Chingu::Window
     self.fill(Gosu::Color::WHITE)
 
     self.caption = "Natform (sadnat.com/game)"
+
+    push_game_state(Level)
   end
 
   def setup
-    push_game_state(Level)
   end
 end
