@@ -1,9 +1,8 @@
-#! /usr/bin/env ruby
+#!/usr/bin/env ruby
 
-# https://github.com/jlnr/gosu/wiki/Ruby-Tutorial
-# https://github.com/jlnr/gosu/wiki/Basic-Concepts
+# A fun little platforming game.
+# @author Nat Welch (nat@natwelch.com)
 
 require "natform"
 
-window = GameWindow.new
-window.show
+GameWindow.new.show
