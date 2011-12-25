@@ -1,41 +1,14 @@
-class Player
+class Player < Chingu::GameObject
   attr_reader :score
-
-  def initialize(window)
-    @image = Gosu::Image.new(window, "media/Starfighter.bmp", false)
-    @beep = Gosu::Sample.new(window, "media/Beep.wav")
-    @x = @y = @vel_x = @vel_y = @angle = 0.0
-    @score = 0
+  def initialize(options = {})
+    super(options.merge(:image => Gosu::Image.autoload("media/Starfighter.bmp")))
   end
 
-  def warp(x, y)
-    @x, @y = x, y
+  def move_left
+    @x -= 1
   end
 
-  def turn_left
-    @angle -= 4.5
-  end
-
-  def turn_right
-    @angle += 4.5
-  end
-
-  def accelerate
-    @vel_x += Gosu::offset_x(@angle, 0.5)
-    @vel_y += Gosu::offset_y(@angle, 0.5)
-  end
-
-  def move
-    @x += @vel_x
-    @y += @vel_y
-    @x %= 800
-    @y %= 600
-
-    @vel_x *= 0.95
-    @vel_y *= 0.95
-  end
-
-  def draw
-    @image.draw_rot(@x, @y, 1, @angle)
+  def move_right
+    @x += 1
   end
 end
