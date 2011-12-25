@@ -1,7 +1,12 @@
 class Player < Chingu::GameObject
   attr_reader :score
   def initialize(options = {})
-    super(options.merge(:image => Gosu::Image.autoload("media/Starfighter.bmp")))
+    super(options.merge(:image => "media/Starfighter.bmp"))
+
+    self.input = {
+      :holding_left => :move_left,
+      :holding_right => :move_right
+    }
   end
 
   def move_left
