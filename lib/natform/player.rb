@@ -25,20 +25,28 @@ class Player < Chingu::GameObject
   end
 
   def move_left
-    @x -= 1
+    move(-4, 0)
   end
 
   def move_right
-    @x += 1
+    move(4, 0)
   end
 
   def jump
-    return if @jumps == 1
+    return if self.jumping?
     @jumps += 1
-    self.velocity_y = -11
+    self.velocity_y = -14
+  end
+
+  def jumping?
+    return @jumps > 0
   end
 
   def land
     @jumps = 0
+  end
+
+  # This get's called when you enable velocity.
+  def move(x,y)
   end
 end

@@ -24,3 +24,4 @@ CONFIG = {
 require "natform/game_window"
 require "natform/player"
 require "natform/block"
+require "natform/level"
