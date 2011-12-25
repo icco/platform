@@ -6,12 +6,6 @@ require "rubygems"
 require "bundler"
 Bundler.require
 
-# This defines the Z-Order for everything. Lower numbers mean farther in the
-# background of things.
-module ZOrder
-  Background, Ground, Player, UI = *0..3
-end
-
 # CONSTANTS
 CONFIG = {
   :window => {
