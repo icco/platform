@@ -27,3 +27,7 @@ Nat's foray into Ruby Game Development using [Gosu][]. His goal is to make a sim
  * Automate packaging for OSX: <https://github.com/jlnr/gosu/wiki/Ruby-Packaging-on-OS-X>
  * Automate packaging for Linux: ???
 
+## Docs
+
+ * <http://rubydoc.info/github/ippa/chingu/master/file/README.rdoc>
+
