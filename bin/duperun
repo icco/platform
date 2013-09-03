@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-# @author Nat Welch (nat@natwelch.com)
-
-require "duperun"
-
-GameWindow.new.show
