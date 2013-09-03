@@ -4,16 +4,15 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{natform}
-  s.version = "0.1.0"
+  s.name = "natform"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nat Welch"]
-  s.date = %q{2011-12-24}
-  s.default_executable = %q{natform}
-  s.description = %q{A platform game where Nat tries to escape depression.}
-  s.email = %q{nat@natwelch.com}
-  s.executables = ["natform"]
+  s.date = "2013-09-03"
+  s.description = "A platform game."
+  s.email = "nat@natwelch.com"
+  s.executables = [".gitkeep", "natform"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md"
@@ -25,50 +24,71 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
+    "bin/.gitkeep",
     "bin/natform",
+    "lib/.gitkeep",
     "lib/natform.rb",
+    "lib/natform/block.rb",
     "lib/natform/game_window.rb",
+    "lib/natform/grass_block.rb",
+    "lib/natform/level.rb",
+    "lib/natform/level_one.rb",
+    "lib/natform/level_two.rb",
     "lib/natform/player.rb",
-    "lib/natform/star.rb",
+    "media/.gitkeep",
     "media/Beep.wav",
-    "media/Space.png",
-    "media/Star.png",
     "media/Starfighter.bmp",
+    "media/jump.wav",
+    "media/lines.png",
+    "media/lvl1.txt",
+    "media/lvl2.txt",
+    "media/player.png",
+    "media/player.pxm",
+    "media/player2.png",
+    "media/player2.pxm",
+    "media/space.png",
+    "media/tileset.png",
     "natform.gemspec"
   ]
-  s.homepage = %q{http://github.com/icco/platform}
+  s.homepage = "http://github.com/icco/natform"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.3}
-  s.summary = %q{A platform game about Nat.}
+  s.rubygems_version = "1.8.23"
+  s.summary = "A platform game involving Nat"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<chipmunk>, [">= 0"])
+      s.add_runtime_dependency(%q<chingu>, [">= 0"])
       s.add_runtime_dependency(%q<gosu>, [">= 0"])
       s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
-      s.add_runtime_dependency(%q<rmagick>, [">= 0"])
+      s.add_runtime_dependency(%q<rmagick>, ["= 2.13.2"])
+      s.add_runtime_dependency(%q<sequel>, [">= 0"])
+      s.add_runtime_dependency(%q<sqlite3>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<rake>, [">= 0"])
       s.add_development_dependency(%q<ronn>, [">= 0"])
     else
-      s.add_dependency(%q<chipmunk>, [">= 0"])
+      s.add_dependency(%q<chingu>, [">= 0"])
       s.add_dependency(%q<gosu>, [">= 0"])
       s.add_dependency(%q<nokogiri>, [">= 0"])
-      s.add_dependency(%q<rmagick>, [">= 0"])
+      s.add_dependency(%q<rmagick>, ["= 2.13.2"])
+      s.add_dependency(%q<sequel>, [">= 0"])
+      s.add_dependency(%q<sqlite3>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<rake>, [">= 0"])
       s.add_dependency(%q<ronn>, [">= 0"])
     end
   else
-    s.add_dependency(%q<chipmunk>, [">= 0"])
+    s.add_dependency(%q<chingu>, [">= 0"])
     s.add_dependency(%q<gosu>, [">= 0"])
     s.add_dependency(%q<nokogiri>, [">= 0"])
-    s.add_dependency(%q<rmagick>, [">= 0"])
+    s.add_dependency(%q<rmagick>, ["= 2.13.2"])
+    s.add_dependency(%q<sequel>, [">= 0"])
+    s.add_dependency(%q<sqlite3>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<rake>, [">= 0"])

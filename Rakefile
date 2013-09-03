@@ -17,18 +17,18 @@ CLEAN.include("data.db")
 CLEAN.include(".DS_Store")
 CLEAN.include(".rake_t_cache")
 
-desc "Run the DupeRun game."
+desc "Run the game."
 task :run do
-  sh "ruby -Ilib ./bin/duperun"
+  sh "ruby -Ilib ./bin/natform"
 end
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  gem.name = "duperun"
-  gem.homepage = "http://github.com/icco/duperun"
+  gem.name = "natform"
+  gem.homepage = "http://github.com/icco/natform"
   gem.license = "MIT"
-  gem.summary = %Q{A platform game involving penguins}
-  gem.description = %Q{A platform game where penguins jump around.}
+  gem.summary = %Q{A platform game involving Nat}
+  gem.description = %Q{A platform game.}
   gem.email = "nat@natwelch.com"
   gem.authors = ["Nat Welch"]
   # dependencies defined in Gemfile
