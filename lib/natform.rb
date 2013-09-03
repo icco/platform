@@ -4,6 +4,7 @@
 # Base requires
 require "rubygems"
 require "bundler"
+require 'logger'
 Bundler.require
 
 include Gosu
@@ -15,22 +16,37 @@ CONFIG = {
     :height => 600,
     :width =>  1000,
   },
-  :db => Sequel.connect("sqlite://data.db")
+  :db => "sqlite3://./data.db"
 }
 
-# This resets the DB every time the app runs.
-CONFIG[:db].create_table! :ticks do
-  primary_key :id
-  Integer :player
-  Float :x
-  Float :y
+class NatForm
+  @@logger = Logger.new(STDOUT)
+  def self.log msg
+    @@logger.level = Logger::WARN
+    @@logger.info msg
+  end
+
+  def self.logger
+    return @@logger
+  end
 end
 
-class NatForm
-  def self.log msg
-    time = Time.now
-    puts "#{time.strftime("%D %T")}: #{msg}"
-  end
+ActiveRecord::Base.logger = NatForm.logger
+ActiveRecord::Base.include_root_in_json = true
+ActiveRecord::Base.store_full_sti_class = true
+ActiveSupport.use_standard_json_time_format = true
+ActiveSupport.escape_html_entities_in_json = false
+Time.zone = "UTC"
+ActiveRecord::Base.default_timezone = :utc
+ActiveRecord::Base.establish_connection(CONFIG[:db])
+
+# This resets the DB every time the app runs.
+ActiveRecord::Migration.class_eval do
+  create_table :ticks do |t|
+    t.integer :player
+    t.float :x
+    t.float :y
+   end
 end
 
 module ZOrder
