@@ -7,3 +7,4 @@ pkg
 .DS_Store
 *.swp
 .rake_t_cache
+*db
