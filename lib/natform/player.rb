@@ -92,17 +92,16 @@ class Player < Chingu::GameObject
   # good. We can then use the Async trait to replay what we saved.
   def record
     return if !@active
-    ticks = CONFIG[:db][:ticks]
 
     every 20, {:name => "rec"} do
       NatForm.log "Record ##{self.which} @x: #{@x} @y: #{@y}"
-      ticks.insert(:player => self.which, :x => @x, :y => @y)
+      Tick.create(:player => self.which, :x => @x, :y => @y)
     end
   end
 
   def stop_record
     stop_timer("rec")
-    NatForm.log "Recorded #{CONFIG[:db][:ticks].filter(:player => self.which).count} ticks."
+    NatForm.log "Recorded #{Tick.where(:player => self.which).count} ticks."
   end
 
   def update

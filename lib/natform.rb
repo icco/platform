@@ -41,12 +41,18 @@ ActiveRecord::Base.default_timezone = :utc
 ActiveRecord::Base.establish_connection(CONFIG[:db])
 
 # This resets the DB every time the app runs.
-ActiveRecord::Migration.class_eval do
-  create_table :ticks do |t|
-    t.integer :player
-    t.float :x
-    t.float :y
-   end
+require "natform/tick"
+
+if Tick.table_exists?
+  Tick.delete_all
+else
+  ActiveRecord::Migration.class_eval do
+    create_table :ticks do |t|
+      t.integer :player
+      t.float :x
+      t.float :y
+    end
+  end
 end
 
 module ZOrder
