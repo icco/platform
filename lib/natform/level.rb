@@ -6,7 +6,7 @@ class Level < Chingu::GameState
   def initialize(options = {})
     super options
 
-    $window.caption = "Dupe Run! (#{self.class})"
+    $window.caption = "Sad Nat. (#{self.class})"
 
     self.viewport.game_area = [0, 0, 3500, 2000]
 
@@ -19,7 +19,6 @@ class Level < Chingu::GameState
 
     self.input = {
       :escape => :exit,
-      :tab => :switch,
     }
 
     # An attempt at map building.
@@ -29,10 +28,12 @@ class Level < Chingu::GameState
     @tiles = Array.new(@width) do |x|
       Array.new(@height) do |y|
         case lines[y][x, 1]
-        when '"'
+        when '&'
           GrassBlock.create({:x => x*50, :y => y*50})
         when '#'
           Block.create({:x => x*50, :y => y*50})
+        when '!'
+          ExitBlock.create({:x => x*50, :y => y*50})
         else
           nil # Do Nothing!
         end
@@ -48,26 +49,5 @@ class Level < Chingu::GameState
     @clone_text.text = "Clones: #{Player.all.count}\nFPS: #{$window.fps}"
     @clone_text.x = self.viewport.x + 10
     @clone_text.y = self.viewport.y + 10
-  end
-
-  def switch
-    i = (@player.which + 1) % Player.all.size
-    @player.active = false
-    old_player = @player
-    @player = Player.all[i]
-    @player.active = true
-
-    # TODO: Figure out why takes over the machine. 
-    # This is the function that will now run asyncly for this character.
-    #old_player.async do
-    #  while true do
-    #    ticks = CONFIG[:db][:ticks]
-    #    ticks.filter(:id => old_player.which).order_by(:id).all.each do |row|
-    #      p row
-    #    end
-    #  end
-    #end
-
-    NatForm.log "Switched to Player ##{@player.which} of #{Player.all.count}."
   end
 end

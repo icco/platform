@@ -62,7 +62,11 @@ end
 # Application requires. If you create a new class, put it here brosef!
 require "natform/game_window"
 require "natform/player"
+
 require "natform/block"
 require "natform/grass_block"
+require "natform/exit_block"
+
 require "natform/level"
 require "natform/levels/one"
+require "natform/levels/two"
